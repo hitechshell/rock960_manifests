@@ -5,6 +5,7 @@
   <remote name="rk29"      fetch="https://gitlab.com/rockchip-group/" />
   <remote name="rk-vendor" fetch="https://gitlab.com/rk-vendor/" />
   <remote name="partner"   fetch="https://gitlab.com/rk-vendor/" />
+  <remote name="hitechshell" fetch="https://github.com/hitechshell/" />
   <!-- remote repo and gerrit review -->
   <include name="Android10_Custom.xml" />
 </manifest>

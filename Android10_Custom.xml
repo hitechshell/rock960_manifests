@@ -36,6 +36,15 @@
   <remove-project name="rk/rkbin" />
   <remove-project name="kernel/configs" />
 
+  <!-- rock960 change -->
+  <remove-project name="platform/system/hardware/interfaces" />
+  <remove-project name="rk/hardware/rk29/drmservice" />
+  <remove-project name="platform/hardware/interfaces" />
+
+  <project path="system/hardware/interfaces" name="rock960_system_hardware_interfaces" groups="pdk" remote="hitechshell" revision="37b428959fb8f9331a3cc00f891161d8c677f761" upstream="rock960-android-10" />
+  <project path="hardware/rockchip/drmservice" name="rock960_hardware_rockchip_drmservice" remote="hitechshell" revision="074834462353ef3cd24b5751cbb7a5a174000fca" upstream="rock960-android-10" />
+  <project path="hardware/interfaces" name="rock960_platform_hardware_interfaces" remote="hitechshell" revision="5a7c35ef8993b8a43ef599dc4153e4f9c5294b9b" upstream="rock960-android-10" />
+
   <project path="tools/tradefederation/core" name="tools/tradefederation" groups="pdk,tradefed" />
   <project path="build/soong" name="build/soong" remote="rk" revision="refs/tags/android-10.0-mid-rkr10" >
     <linkfile src="root.bp" dest="Android.bp" />
@@ -51,7 +60,7 @@
     <copyfile src="javaenv.sh" dest="javaenv.sh"/>
     <copyfile src="build/rockchip/build.sh" dest="build.sh"/>
   </project>
-  <project path="device/rockchip/rk3399" name="rk/device/rockchip/rk3399" remote="rk-vendor" revision="964fa2d3326de5cdbcd13cc0a241fe8791bcc337" upstream="rockchip-android-10" >
+  <project path="device/rockchip/rk3399" name="rock960_device_rockchip_rk3399" remote="hitechshell" revision="b610b8b44a4d8c33e9e1cb94035336069b5b7090" upstream="rock960-android-10" >
     <linkfile src="RockPi4B/build-rockpi-4b.sh" dest="build-rockpi-4b.sh" />
     <linkfile src="RockPi4C/build-rockpi-4c.sh" dest="build-rockpi-4c.sh" />
     <linkfile src="RockPi4C/build-rockpi-fuhai-evb.sh" dest="build-rockpi-fuhai-evb.sh" />
@@ -83,8 +92,8 @@
   <project path="hardware/rockchip/audio" name="rk/hardware/rk29/audio" remote="rk-vendor" revision="794fcb0dc2dbf9bbdbe8398185c4e6ef1f45c8cd" upstream="rockchip-android-10" />
   <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" remote="rk-vendor" revision="6af7135bbdbdf457bc59604e973aee7632623a1c" upstream="rockchip-android-10" />
 
-  <project path="kernel" name="rk/kernel" remote="rk-vendor" revision="775b2a0282e5170ab467157cb8b19ea565c24beb" upstream="rockchip-android-10" />
-  <project path="u-boot" name="rk/u-boot" remote="rk-vendor" revision="745ea5246f1a49439f7e2dbe87b0a7c0ccc82ac3" upstream="rockchip-android-10" />
+  <project path="kernel" name="rock960_kernel" remote="hitechshell" revision="e962833f91f988df89f5749479b393ea1c233c91" upstream="rock960-android-10" />
+  <project path="u-boot" name="rock960_u-boot" remote="hitechshell" revision="dc1ce3935064a2f6dac3a1e606df446a0a69ea51" upstream="rock960-android-10" />
   <project path="rkbin"  name="rk/rkbin"  remote="rk-vendor" revision="53a9ab286ba99382076f74488634a6ddcb61fe76" upstream="rockchip-android-10" />
   <project path="kernel/configs" name="kernel/configs" groups="vts,pdk" remote="rk-vendor" revision="b7764b40fe0fc1fa34e3f06e5791a2ba1b49db4d" upstream="rockchip-android-10" >
     <copyfile dest="kernel/kernel/configs/android-10.config" src="rockchip/android-10.config"/>
