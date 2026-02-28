@@ -92,8 +92,8 @@
   <project path="hardware/rockchip/audio" name="rk/hardware/rk29/audio" remote="rk-vendor" revision="794fcb0dc2dbf9bbdbe8398185c4e6ef1f45c8cd" upstream="rockchip-android-10" />
   <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" remote="rk-vendor" revision="6af7135bbdbdf457bc59604e973aee7632623a1c" upstream="rockchip-android-10" />
 
-  <project path="kernel" name="rock960_kernel" remote="hitechshell" revision="e962833f91f988df89f5749479b393ea1c233c91" upstream="rock960-android-10" />
-  <project path="u-boot" name="rock960_u-boot" remote="hitechshell" revision="dc1ce3935064a2f6dac3a1e606df446a0a69ea51" upstream="rock960-android-10" />
+  <project path="kernel" name="rock960_kernel" remote="hitechshell" revision="c4d6e206fdf84b7dba3d06e4aacabc0d4942ac4a" upstream="rock960-android-10" />
+  <project path="u-boot" name="rock960_u-boot" remote="hitechshell" revision="01a573f39a0bfb71196dc09426b3af9e1dbabb75" upstream="rock960-android-10" />
   <project path="rkbin"  name="rk/rkbin"  remote="rk-vendor" revision="53a9ab286ba99382076f74488634a6ddcb61fe76" upstream="rockchip-android-10" />
   <project path="kernel/configs" name="kernel/configs" groups="vts,pdk" remote="rk-vendor" revision="b7764b40fe0fc1fa34e3f06e5791a2ba1b49db4d" upstream="rockchip-android-10" >
     <copyfile dest="kernel/kernel/configs/android-10.config" src="rockchip/android-10.config"/>
