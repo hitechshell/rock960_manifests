@@ -60,7 +60,7 @@
     <copyfile src="javaenv.sh" dest="javaenv.sh"/>
     <copyfile src="build/rockchip/build.sh" dest="build.sh"/>
   </project>
-  <project path="device/rockchip/rk3399" name="rock960_device_rockchip_rk3399" remote="hitechshell" revision="b610b8b44a4d8c33e9e1cb94035336069b5b7090" upstream="rock960-android-10" >
+  <project path="device/rockchip/rk3399" name="rock960_device_rockchip_rk3399" remote="hitechshell" revision="5e5dd3ce1e6148c896dd663044cf67edcb84aef5" upstream="rock960-android-10" >
     <linkfile src="RockPi4B/build-rockpi-4b.sh" dest="build-rockpi-4b.sh" />
     <linkfile src="RockPi4C/build-rockpi-4c.sh" dest="build-rockpi-4c.sh" />
     <linkfile src="RockPi4C/build-rockpi-fuhai-evb.sh" dest="build-rockpi-fuhai-evb.sh" />
@@ -92,7 +92,7 @@
   <project path="hardware/rockchip/audio" name="rk/hardware/rk29/audio" remote="rk-vendor" revision="794fcb0dc2dbf9bbdbe8398185c4e6ef1f45c8cd" upstream="rockchip-android-10" />
   <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" remote="rk-vendor" revision="6af7135bbdbdf457bc59604e973aee7632623a1c" upstream="rockchip-android-10" />
 
-  <project path="kernel" name="rock960_kernel" remote="hitechshell" revision="c4d6e206fdf84b7dba3d06e4aacabc0d4942ac4a" upstream="rock960-android-10" />
+  <project path="kernel" name="rock960_kernel" remote="hitechshell" revision="99452d0c106b9b71984fc4d6efd6e395236996ba" upstream="rock960-android-10" />
   <project path="u-boot" name="rock960_u-boot" remote="hitechshell" revision="01a573f39a0bfb71196dc09426b3af9e1dbabb75" upstream="rock960-android-10" />
   <project path="rkbin"  name="rk/rkbin"  remote="rk-vendor" revision="53a9ab286ba99382076f74488634a6ddcb61fe76" upstream="rockchip-android-10" />
   <project path="kernel/configs" name="kernel/configs" groups="vts,pdk" remote="rk-vendor" revision="b7764b40fe0fc1fa34e3f06e5791a2ba1b49db4d" upstream="rockchip-android-10" >
