@@ -1,4 +1,4 @@
-Android 12
+Android 12 for Rock960 (AB version)
 ==========
 
 Pre-requisites
@@ -27,7 +27,7 @@ Cloning the source
 -------------------
 
 ```
-repo init --no-tags --no-clone-bundle -u https://github.com/vicharak-in/rockchip-android-manifest -b master -m rockchip-s-vicharak.xml
+repo init --no-tags --no-clone-bundle -u https://github.com/hitechshell/rock960_manifests -b rock960-android-12 -m rockchip-s-rock960.xml
 ```
 
 Syncing the source
@@ -48,22 +48,11 @@ Source the Android 12 environment setup
 source build/envsetup.sh
 ```
 
-Copy Android Specific configs into Kernel Repository
-------------------------------------------------------
-
-```
-cp -vr mkcombinedroot/configs/android-1* kernel-5.10/arch/arm64/configs
-```
-
-The device-specific configuration file for Android 12.1 is located at :
-- `device/rockchip/rk3399` for **Vaaman** device 
-- `device/rockchip/rk3588` for **Axon** device.
-
 Lunch the device configuration
 -------------------------------
 
 ```
-lunch <device>-userdebug
+lunch rk3399-userdebug
 ```
 
 Building the Android 12 firmware
@@ -92,3 +81,7 @@ build.sh is the firmware build script that can be used to interactively build th
 
 -p -> Pack the firmware
 
+Result
+---
+
+`rockdev/Image-rk3399/gpt.img` is file that can be flashed by `rkdeveloptool wl 0 <filename>`
