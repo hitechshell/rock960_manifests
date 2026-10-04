@@ -85,3 +85,75 @@ Result
 ---
 
 `rockdev/Image-rk3399/gpt.img` is file that can be flashed by `rkdeveloptool wl 0 <filename>`
+
+Mainline U-Boot
+---
+
+Also, we can boot android from (semi-) mainline uboot.
+
+(One of advantage is ability boot from nvme; also in downstream uboot usb-ethernet is broken, while in mainline - not)
+
+build u-boot (and ATF):
+```
+export CROSS_COMPILE=aarch64-linux-gnu-
+
+git clone https://github.com/ARM-software/arm-trusted-firmware
+cd arm-trusted-firmware
+make PLAT=rk3399 bl31
+cd ..
+export export BL31=$(pwd)/arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf
+git clone https://github.com/hitechshell/rock960_u-boot -b rock960-android-12-mainline-u-boot
+cd rock960_u-boot
+make rock960-rk3399_defconfig
+make -j$(nproc)
+```
+file with name u-boot-rockchip.bin can be flashed to mmc or sdcard (sdcard has priority over mmc).
+```
+dd if=u-boot-rockchip.bin of=/dev/mmcblk1 status=progress seek=64
+```
+
+
+repack boot.img and recovery.img
+```
+git clone https://github.com/anestisb/android-unpackbootimg
+cd android-unpackbootimg
+make
+cd ..
+mkdir work
+cd work
+cp <path_to_boot.img> .
+cp <path_to_recovery.img> .
+
+../android-unpackbootimg/unpackbootimg -i boot.img -o boot
+../android-unpackbootimg/unpackbootimg -i recovery.img -o recovery
+
+mkbootimg \
+  --header_version 2 \
+  --kernel boot/boot.img-zImage \
+  --ramdisk boot/boot.img-ramdisk.gz \
+  --dtb ./rk3399-rock960-ab.dtb \
+  --cmdline "console=ttyFIQ0 firmware_class.path=/vendor/etc/firmware init=/init rootwait ro loop.max_part=7 androidboot.console=ttyFIQ0 androidboot.wificountrycode=CN androidboot.hardware=rk30board androidboot.boot_devices=f8000000.pcie,fe330000.sdhci androidboot.selinux=permissive earlycon=uart8250,mmio32,0xff1a0000 androidboot.mode=normal" \
+  --pagesize 2048 \
+  --base           0x04000000 \
+  --kernel_offset  0x00080000 \
+  --ramdisk_offset 0x04000000 \
+  --dtb_offset     0x06000000 \
+  --tags_offset    0x00000100 \
+  --output new_boot.img
+
+mkbootimg \
+  --header_version 2 \
+  --kernel recovery/recovery.img-zImage \
+  --ramdisk recovery/recovery.img-ramdisk.gz \
+  --dtb ./rk3399-rock960-ab.dtb \
+  --cmdline "console=ttyFIQ0 firmware_class.path=/vendor/etc/firmware init=/init rootwait ro loop.max_part=7 androidboot.console=ttyFIQ0 androidboot.wificountrycode=CN androidboot.hardware=rk30board androidboot.boot_devices=f8000000.pcie,fe330000.sdhci androidboot.selinux=permissive earlycon=uart8250,mmio32,0xff1a0000 androidboot.mode=normal" \
+  --pagesize 2048 \
+  --base           0x20000000 \
+  --tags_offset    0x00000100 \
+  --kernel_offset  0x00008000 \
+  --ramdisk_offset 0x04008000 \
+  --dtb_offset     0x08008000 \
+  --output new_recovery.img
+```
+
+and flash to partitions
