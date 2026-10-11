@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-	<remote name="vicharak"
-		sync-c="true"
-		sync-j="8"
-		fetch="https://github.com/vicharak-in"
-		review="https://github.com/vicharak-in" />
 	<remote name="hitechshell" fetch="https://github.com/hitechshell" />
 	<remote name="aosp" fetch="http://gitlab.com/rockchip_android_s" />
 	<remote name="ohd" fetch="http://gitlab.com/rockchip_android_s" />

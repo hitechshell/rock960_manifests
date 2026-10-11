@@ -3,9 +3,7 @@
 	<project path="u-boot" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_u-boot" />
 	<!-- Rock960 Specific Board Configuration -->
 	<project path="device/rockchip/rk3399" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_device_rockchip_rk3399" />
-	<!-- Axon Specific Board Configuration -->
-	<project path="device/rockchip/rk3588" remote="vicharak" dest-branch="android12" revision="android12" name="android_device_rockchip_rk3588" />
-	<project path="device/rockchip/common" remote="vicharak" dest-branch="android12" revision="dcd9cc37494d63f845bd6035f695151f0cfb1bc3" name="android_device_rockchip_common">
+	<project path="device/rockchip/common" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_android_device_rockchip_common">
 	    <copyfile dest=".classpath" src=".classpath"/>
 	    <copyfile dest="mkimage.sh" src="mkimage.sh"/>
 	    <copyfile dest="javaenv.sh" src="javaenv.sh"/>
@@ -16,16 +14,16 @@
 	</project>
 
 	<!-- Android RealTek RTL8852BS Module Support For Vaaman and Axon ( Bluetooth ) -->
-	<project path="hardware/realtek" remote="vicharak" dest-branch="android12" revision="android12" name="android_hardware_realtek"/>
+	<project path="hardware/realtek" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_android_hardware_realtek"/>
 
 	<!--- Rock960 Kernel -->
 	<project path="kernel-5.10" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_kernel" />
 
 	<!-- New Firware Support For GPU -->
-	<project path="vendor/rockchip/common" remote="vicharak" dest-branch="main" revision="main" name="android_rockchip_gpu" />
+	<project path="vendor/rockchip/common" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_android_rockchip_gpu" />
 
 	<!-- Android RTL8852BS Module Support For Axon ( Wifi ) -->
-	<project path="frameworks/opt/net/wifi" remote="vicharak" dest-branch="main" revision="c54af2629d41bfa7e06c5b5bfa11b73c2528742d" name="android_rockchip_wifi" />
+	<project path="frameworks/opt/net/wifi" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_android_rockchip_wifi" />
 
 	<remove-project name="rk/hardware/rk29/drmservice" />
 	<project path="hardware/rockchip/drmservice" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_hardware_rockchip_drmservice" />
