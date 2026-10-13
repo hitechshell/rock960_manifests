@@ -85,3 +85,6 @@ Result
 ---
 
 `rockdev/Image-rk3399/gpt.img` is file that can be flashed by `rkdeveloptool wl 0 <filename>`
+
+(Optional) for booting without any write on emmc you can flash `rockdev/Image-rk3399/u-boot-rockchip.bin` to sdcard (it can boot android both form emmc and nvme) by
+`dd if=rockdev/Image-rk3399/u-boot-rockchip.bin of=/dev/mmcblk1 status=progress seek=64`

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-	<project path="u-boot" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_u-boot" />
+	<project path="arm-trusted-firmware" remote="arm-software" dest-branch="master" revision="3d425f4f459820a44d24b23464dbc09d6baab7bb" name="arm-trusted-firmware" />
+	<project path="u-boot" remote="hitechshell" dest-branch="rock960-android-12-mainline-u-boot" revision="rock960-android-12-mainline-u-boot" name="rock960_u-boot" />
 	<!-- Rock960 Specific Board Configuration -->
-	<project path="device/rockchip/rk3399" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_device_rockchip_rk3399" />
-	<project path="device/rockchip/common" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_android_device_rockchip_common">
+	<project path="device/rockchip/rk3399" remote="hitechshell" dest-branch="rock960-android-12-mainline-u-boot" revision="rock960-android-12-mainline-u-boot" name="rock960_device_rockchip_rk3399" />
+	<project path="device/rockchip/common" remote="hitechshell" dest-branch="rock960-android-12-mainline-u-boot" revision="rock960-android-12-mainline-u-boot" name="rock960_android_device_rockchip_common">
 	    <copyfile dest=".classpath" src=".classpath"/>
 	    <copyfile dest="mkimage.sh" src="mkimage.sh"/>
 	    <copyfile dest="javaenv.sh" src="javaenv.sh"/>
@@ -17,7 +18,7 @@
 	<project path="hardware/realtek" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_android_hardware_realtek"/>
 
 	<!--- Rock960 Kernel -->
-	<project path="kernel-5.10" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_kernel" />
+	<project path="kernel-5.10" remote="hitechshell" dest-branch="rock960-android-12-mainline-u-boot" revision="rock960-android-12-mainline-u-boot" name="rock960_kernel" />
 
 	<!-- New Firware Support For GPU -->
 	<project path="vendor/rockchip/common" remote="hitechshell" dest-branch="rock960-android-12" revision="rock960-android-12" name="rock960_android_rockchip_gpu" />
