@@ -27,7 +27,7 @@ Cloning the source
 -------------------
 
 ```
-repo init --no-tags --no-clone-bundle -u https://github.com/hitechshell/rock960_manifests -b rock960-android-12 -m rockchip-s-rock960.xml
+repo init --no-tags --no-clone-bundle -u https://github.com/hitechshell/rock960_manifests -b rock960-android-12-mainline-u-boot -m rockchip-s-rock960.xml
 ```
 
 Syncing the source
